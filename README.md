@@ -1,2 +1,2 @@
 # db-project-
-database team project 
+database team project for 정태선
