@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var webtoon = require('../webtoon.json');
 
-router.get('/', function (req, res, next) {
+router.get('/webtoon', function (req, res, next) {
     console.log("dbtoon index");
     res.send(webtoon);
 });

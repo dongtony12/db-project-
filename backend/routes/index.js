@@ -7,7 +7,7 @@ router.get('/', function (req, res, next) {
   //res.render('index', { title: 'Express' }); 기존코드
   console.log("===================");
   res.send(webtoons);
-  res.sendFile(path.join(__dirname, '../public', 'index.html'))
+  res.sendFile(path.join(__dirname, '../public', 'login.html'))
 });
 
 module.exports = router;
