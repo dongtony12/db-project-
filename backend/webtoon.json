@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "인생존망",
+        "author": "박태준",
+        "poster": "https://shared-comic.pstatic.net/thumb/webtoon/733766/thumbnail/thumbnail_IMAG10_b187e34b-9f68-4fd0-9b65-863560682933.jpg"
+    },
+    {
+        "id": 2,
+        "title": "1초",
+        "author": "test",
+        "poster": "https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_5e13c29c-f451-4430-a84a-a46495fb8cc3.jpg"
+    },
+    {
+        "id": 3,
+        "title": "1초",
+        "author": "test",
+        "poster": "https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_5e13c29c-f451-4430-a84a-a46495fb8cc3.jpg"
+    },
+    {
+        "id": 4,
+        "title": "1초",
+        "author": "test",
+        "poster": "https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_5e13c29c-f451-4430-a84a-a46495fb8cc3.jpg"
+    },
+    {
+        "id": 5,
+        "title": "1초",
+        "author": "test",
+        "poster": "https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_5e13c29c-f451-4430-a84a-a46495fb8cc3.jpg"
+    }
+]
