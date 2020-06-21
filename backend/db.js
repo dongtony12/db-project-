@@ -1,16 +1,31 @@
-var mysql = require('mysql'); //mysql 연동
+var express = require('express');
+var router = express.Router();
 
-var connection = mysql.createConnection({
+var mysql = require('mysql');
+var fs = require('fs'); //json 파일로 따로 저장!
+
+
+var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'rlaehdgus',
     database: 'dbtoon'
-});// mysql db 연결
+})
 
-connection.connect(function (err) {
+conn.connect();
+
+var webtoondata = conn.query(`select * from webtoon`, function (err, row, fields) {
     if (err) {
-        console.log(err);
         throw err;
-
     }
-});
+
+    fs.writeFile('webtoon.json', JSON.stringify(row), function (err) {
+        if (err) {
+            throw err;
+        }
+        else {
+            console.log('saved complete!');
+        }
+    })
+    conn.end();
+})
