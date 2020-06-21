@@ -8,6 +8,7 @@ router.get('/', function (req, res, next) {
     res.send(webtoon)
 
 
+
 });
 
 router.get('/:id', function (req, res, next) {
@@ -19,7 +20,9 @@ router.get('/:id', function (req, res, next) {
         return toon.id === id
     });
     console.log(toon);
+
     res.send(toon);
+
 });
 
 module.exports = router;

@@ -14,7 +14,7 @@ var conn = mysql.createConnection({
 
 conn.connect();
 
-var webtoondata = conn.query(`select * from webtoon`, function (err, row, fields) {
+var webtoondata = conn.query(`select * from webtoon order by ID`, function (err, row, fields) {
     if (err) {
         throw err;
     }
