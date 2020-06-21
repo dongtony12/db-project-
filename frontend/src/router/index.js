@@ -1,8 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+
+
 //import indexpage from '@/components/indexpage'
-//import loginpage from '@/components/loginpage'
+import mainpage from '@/components/mainpage'
+import loginpage from '@/components/login'
 import signuppage from '@/components/signup'
 import webtoonindex from '@/components/webtoonindexpage'
 import webtoonshow from '@/components/webtoonshowpage'
@@ -10,17 +13,19 @@ import webtoonshow from '@/components/webtoonshowpage'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'indexpage',
-    //   component: indexpage
-    // },
-    // {
-    //   path: '/loginpage',
-    //   name: 'loginpage',
-    //   component: loginpage
-    // },
+
+    {
+      path: '/mainpage',
+      name: 'mainpage',
+      component: mainpage
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: loginpage
+    },
     {
       path: '/signup',
       name: 'signup',

@@ -1,10 +1,25 @@
 var express = require('express');
 var router = express.Router();
 var webtoon = require('../webtoon.json');
+var mysql = require('mysql');
 
-router.get('/webtoon', function (req, res, next) {
-    console.log("dbtoon index");
-    res.send(webtoon);
+var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'rlaehdgus',
+    database: 'dbtoon'
+})
+
+conn.connect();
+
+var webtoondata = connection.query(`select * from webtoon`)
+
+router.get('/', function (req, res, next) {
+
+
+    res.send(webtoondata);
+
+
 });
 
 router.get('/:id', function (req, res, next) {
