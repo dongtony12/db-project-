@@ -44,6 +44,7 @@ export default {
             this.$router.push({ path: "login" }); // signup button 실행후 loginpage로 전환
           }
           if (res.data.success == false) {
+            //sign up fail 이 안뜬다
             alert(res.data.message);
           }
         })
