@@ -5,15 +5,15 @@
     <input type="text" id="id" v-model="user.userid" />
 
     <div class="input_row">
-      <label for="password">패스워드</label>
-      <input type="password" id="password" v-model="user.password" />
+      <label for="name">이름</label>
+      <input type="text" id="name" v-model="user.name" />
 
       <div class="input_row">
-        <label for="age">나이</label>
-        <input type="text" id="age" v-model="user.age" />
-        <div>
-          <button click="signUp">가입하기</button>
-        </div>
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" v-model="user.password" />
+      </div>
+      <div>
+        <button v-on:click="signUp">가입하기</button>
       </div>
     </div>
   </div>
@@ -25,8 +25,8 @@ export default {
     return {
       user: {
         userid: "",
-        password: "",
-        age: ""
+        name: "",
+        password: ""
       }
     };
   },
@@ -39,7 +39,7 @@ export default {
         .then(res => {
           if (res.data.success == true) {
             alert(res.data.message);
-            this.$router.push("/webtoon"); // signup button 실행후 mainpage로 전환
+            this.$router.push("/login"); // signup button 실행후 mainpage로 전환
           }
           if (res.data.success == false) {
             alert(res.data.message);

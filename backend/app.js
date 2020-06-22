@@ -18,7 +18,17 @@ var connection = mysql.createConnection({
   user: 'root',
   password: 'rlaehdgus',
   database: 'dbtoon'
-});// mysql db 연결
+});
+connection.connect(function (err) {
+  if (err) {
+    console.error('mysql connection error');
+    console.error(err);
+    throw err;
+  }
+  console.log("connect!");
+
+});
+// mysql db 연결
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -32,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/webtoon', webtoonsRouter);
 app.use('/api/users/signUp', usersRouter);
+app.use('/api/users/login', usersRouter);
 
 app.use(function (req, res, next) {
   req.conn = connection;
@@ -52,6 +63,21 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.post('/regist', function (req, res) {
+  var user = {
+    'userid': req.body.userid,
+    'name': req.body.name,
+    'password': req.body.password
+  };
+  connection.query(`insert into user set ?`, user, function (err, result) {
+    if (err) {
+      console.error(err);
+      throw err;
+    }
+    res.status(200).send('success');
+  });
 });
 
 module.exports = app;
