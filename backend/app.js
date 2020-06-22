@@ -44,10 +44,10 @@ app.use('/api/webtoon', webtoonsRouter);
 app.use('/api/users/signUp', usersRouter);
 app.use('/api/users/login', usersRouter);
 
-app.use(function (req, res, next) {
-  req.conn = connection;
-  next();
-}) //mysql 전역 사용 
+// app.use(function (req, res, next) {
+//   req.conn = connection;
+//   next();
+// }) //mysql 전역 사용 
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -64,14 +64,24 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+// var sql = "INSERT INTO user (userid,name,password) VALUES ('dongtony','김동현','rlaehdgus1')";
+// var qr = connection.query(sql, function (err, result) {
+//   if (err) {
+//     console.error(err);
+//     throw err;
+//   }
+// });
+// console.log(qr);
 app.post('/regist', function (req, res) {
   var user = {
     'userid': req.body.userid,
     'name': req.body.name,
     'password': req.body.password
   };
-  connection.query(`insert into user set ?`, user, function (err, result) {
+  var sql = "INSERT INTO user (userid,name,password) VALUES ?";
+  console.log(sql);
+
+  connection.query(sql, user, function (err, result) {
     if (err) {
       console.error(err);
       throw err;

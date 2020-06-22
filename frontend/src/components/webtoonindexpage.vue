@@ -1,8 +1,14 @@
+<style>
+.cell {display:inline-block;width:25%;}
+
+</style>
 <template>
   <div class="wrap">
     <h1>웹툰목록</h1>
-    <ul class="webtoons">
-      <li v-for="webtoon in webtoons" class="item" v-bind:key="webtoon">
+    <div>
+    <div class="webtoons">
+      <div class="row">
+      <div v-for="webtoon in webtoons" class="cell" v-bind:key="webtoon">
         <router-link :to="{ name: 'webtoonshowpage', params: { id: webtoon.id }}">
           <img v-bind:src="webtoon.poster" class="poster" />
         </router-link>
@@ -13,8 +19,9 @@
             class="link"
           >자세히보기</router-link>
         </div>
-      </li>
-    </ul>
+      </div>
+      </div>
+    </div>
   </div>
 </template>
 
