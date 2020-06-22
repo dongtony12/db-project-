@@ -4,7 +4,7 @@ import Router from 'vue-router'
 
 
 //import indexpage from '@/components/indexpage'
-import mainpage from '@/components/mainpage'
+// import mainpage from '@/components/mainpage'
 import loginpage from '@/components/login'
 import signuppage from '@/components/signup'
 import webtoonindex from '@/components/webtoonindexpage'
@@ -16,11 +16,11 @@ export default new Router({
   mode: 'history',
   routes: [
 
-    {
-      path: '/mainpage',
-      name: 'mainpage',
-      component: mainpage
-    },
+    // {
+    //   path: '/mainpage',
+    //   name: 'mainpage',
+    //   component: mainpage
+    // },
     {
       path: '/login',
       name: 'login',

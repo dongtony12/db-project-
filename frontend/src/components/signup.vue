@@ -41,7 +41,7 @@ export default {
         .then(res => {
           if (res.data.success == true) {
             alert(res.data.message);
-            this.$router.push("/login"); // signup button 실행후 mainpage로 전환
+            this.$router.push({ path: "login" }); // signup button 실행후 loginpage로 전환
           }
           if (res.data.success == false) {
             alert(res.data.message);

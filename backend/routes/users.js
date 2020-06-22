@@ -27,11 +27,11 @@ router.post('/signup', function (req, res) {
 
   connection.query(`SELECT userid FROM users WHERE userid = '${user.userid}'`, function (err, row) {
 
-    console.log(req.body);
-
-
-
     if (row == undefined) { //  동일한 아이디가 없을경우,
+      if (!user.userid || !user.password || !user.name) {
+        console.log("값이 비었습니다");
+
+      }
       const salt = bcrypt.genSaltSync();
       const encryptedPassword = bcrypt.hashSync(user.password, salt);
       connection.query(`INSERT INTO user (userid,name,password) VALUES ('${user.userid}','${user.name}','${user.password}')`, user, function (err, row2) {
