@@ -25,9 +25,11 @@ router.post('/signup', function (req, res) {
   };
 
 
-  connection.query(`SELECT userid FROM users WHERE userid = '${user.userid}'`, function (err, row) {
+  connection.query(`SELECT userid FROM user WHERE userid = '${user.userid}'`, function (err, row) {
 
-    if (row == undefined) { //  동일한 아이디가 없을경우,
+    console.log(row);
+
+    if (row[0] == undefined) { //  동일한 아이디가 없을경우,
       const salt = bcrypt.genSaltSync();
       const encryptedPassword = bcrypt.hashSync(user.password, salt);
       connection.query(`INSERT INTO user (userid,name,password) VALUES ('${user.userid}','${user.name}','${user.password}')`, user, function (err, row2) {
@@ -38,7 +40,7 @@ router.post('/signup', function (req, res) {
         message: 'Sign Up Success!'
       })
     }
-    else {//동일한 아이디있음에도 에러 안던짐
+    else {
       res.json({
         success: false,
         message: 'Sign Up Failed Please use anoter ID'
