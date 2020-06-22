@@ -1,30 +1,45 @@
 
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
+var bcrypt = require('bcrypt');
 
-console.log("1");
+const mysql = require('mysql');
+
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'rlaehdgus',
+  database: 'dbtoon'
+})
+
+connection.connect();
+
+
+
+
 router.post('/signup', function (req, res) {
-
   const user = {
     'userid': req.body.user.userid,
     'name': req.body.user.name,
     'password': req.body.user.password
   };
-  console.log(user.userid);
-
-  connection.query('SELECT userid FROM users WHERE userid = "' + user.userid + '"', function (err, row) {
 
 
-    if (row[0] == undefined) { //  동일한 아이디가 없을경우,
+  connection.query(`SELECT userid FROM users WHERE userid = '${user.userid}'`, function (err, row) {
+
+    console.log(req.body);
+
+
+
+    if (row == undefined) { //  동일한 아이디가 없을경우,
       const salt = bcrypt.genSaltSync();
       const encryptedPassword = bcrypt.hashSync(user.password, salt);
-      connection.query('INSERT INTO users (userid,name,password) VALUES ("' + user.userid + '","' + user.name + '","' + encryptedPassword + '")', user, function (err, row2) {
+      connection.query(`INSERT INTO user (userid,name,password) VALUES ('${user.userid}','${user.name}','${user.password}')`, user, function (err, row2) {
         if (err) throw err;
       });
       res.json({
         success: true,
-        message: 'Sing Up Success!'
+        message: 'Sign Up Success!'
       })
     }
     else {
@@ -38,10 +53,10 @@ router.post('/signup', function (req, res) {
 
 router.post('/login', function (req, res) {
   const user = {
-    'userid': req.body.user.userid,
-    'password': req.body.user.password
+    'userid': req.body.user.useruserid,
+    'password': req.body.user.userpassword
   };
-  connection.query('SELECT userid, password FROM user WHERE userid = "' + user.userid + '"', function (err, row) {
+  connection.query(`SELECT userid, password FROM user WHERE userid = '${user.userid} '`, function (err, row) {
     if (err) {
       res.json({ // 매칭되는 아이디 없을 경우
         success: false,

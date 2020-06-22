@@ -5,12 +5,9 @@
     <section>
       <h2>웹툰정보</h2>
       <dl class="info">
-        <dt>작가 :</dt>
-        <dd>{{webtoon.pen_name}}</dd>
-        <dt>연재처 :</dt>
-        <dd>{{webtoon.platform_name}}</dd>
-        <dt>링크 :</dt>
-        <dd>{{webtoon.webtoon_link}}</dd>
+        <dt>작가 :{{webtoon.pen_name}}</dt>
+        <dt>연재처 :{{webtoon.platform_name}}</dt>
+        <dt>링크 :{{webtoon.webtoon_link}}</dt>
       </dl>
     </section>
     <router-link :to="{ name: 'webtoonindexpage', params: { id: webtoon.id }}" class="link">돌아가기</router-link>

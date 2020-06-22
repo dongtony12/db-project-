@@ -26,7 +26,7 @@ connection.connect(function (err) {
     console.error(err);
     throw err;
   }
-  console.log("connect!");
+
 
 });
 // mysql db 연결
@@ -42,8 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api/webtoon', webtoonsRouter);
-app.use('/api/users/signUp', usersRouter);
-app.use('/api/users/login', usersRouter);
+app.use('/api/users', usersRouter);
+
 
 // app.use(function (req, res, next) {
 //   req.conn = connection;
@@ -65,34 +65,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-// var sql = "INSERT INTO user (userid,name,password) VALUES ('dongtony','김동현','rlaehdgus1')";
-// var qr = connection.query(sql, function (err, result) {
-//   if (err) {
-//     console.error(err);
-//     throw err;
-//   }
-// });
-// console.log(qr);
 
-// app.post('/webtoon/:id', (req, res) => {
-//   console.log(req.body);
-
-// })
-app.post('/regist', (req, res) => {
-  console.log(req.body);
-
-  var user = {
-    'userid': req.body.userid,
-    'name': req.body.name,
-    'address': req.body.address
-  };
-  connection.query('insert into users values ?', user, function (err, result) {
-    if (err) {
-      console.error(err);
-      throw err;
-    }
-    res.status(200).send('success');
-  });
-});
 
 module.exports = app;
