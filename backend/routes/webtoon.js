@@ -6,6 +6,7 @@ var webtoon = require('../webtoon.json');
 router.get('/', function (req, res, next) {
 
     res.send(webtoon)
+    console.log(req.body.webtoon);
 
 
 
@@ -20,6 +21,9 @@ router.get('/:id', function (req, res, next) {
         return toon.id === id
     });
     console.log(toon);
+
+
+
 
     res.send(toon);
 

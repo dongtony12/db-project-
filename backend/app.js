@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 var mysql = require('mysql'); //mysql 연동
 //router index
 var indexRouter = require('./routes/index');
@@ -35,7 +36,7 @@ app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -72,16 +73,20 @@ app.use(function (err, req, res, next) {
 //   }
 // });
 // console.log(qr);
-app.post('/regist', function (req, res) {
+
+// app.post('/webtoon/:id', (req, res) => {
+//   console.log(req.body);
+
+// })
+app.post('/regist', (req, res) => {
+  console.log(req.body);
+
   var user = {
     'userid': req.body.userid,
     'name': req.body.name,
-    'password': req.body.password
+    'address': req.body.address
   };
-  var sql = "INSERT INTO user (userid,name,password) VALUES ?";
-  console.log(sql);
-
-  connection.query(sql, user, function (err, result) {
+  connection.query('insert into users values ?', user, function (err, result) {
     if (err) {
       console.error(err);
       throw err;
