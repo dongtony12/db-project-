@@ -15,7 +15,7 @@ connection.connect();
 router.get('/', function (req, res, next) {
 
     res.send(webtoon)
-    console.log(req.body.webtoon);
+
 
 
 
@@ -56,6 +56,14 @@ router.post('/:id', (req, res) => {
 
 })
 
+router.post('/webtoonlist', (req, res) => {
+    connection.query(`SELECT * FROM webtoon`, (err, rows) => {
+        console.log("1");
+        console.log(rows);
+        if (err) throw err;
+        res.send(rows);
+    });
+});
 
 
 module.exports = router;

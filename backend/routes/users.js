@@ -4,7 +4,15 @@ var router = express.Router();
 var bcrypt = require('bcrypt');
 
 
+var mysql = require('mysql'); //mysql 연동
 
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'rlaehdgus',
+  database: 'dbtoon'
+});
+connection.connect();
 
 
 router.post('/signup', function (req, res) {
@@ -78,7 +86,7 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/userlist', (req, res) => {
-  connection.query('SELECT * FROM user', (err, rows) => {
+  connection.query('SELECT * FROM user order by user.num desc', (err, rows) => {
     console.log(rows);
 
     if (err) throw err;
