@@ -45,10 +45,10 @@ app.use('/api/webtoon', webtoonsRouter);
 app.use('/api/users', usersRouter);
 
 
-// app.use(function (req, res, next) {
-//   req.conn = connection;
-//   next();
-// }) //mysql 전역 사용 
+app.use(function (req, res, next) {
+  req.conn = connection;
+  next();
+}) //mysql 전역 사용 
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

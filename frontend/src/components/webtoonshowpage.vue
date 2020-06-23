@@ -31,12 +31,9 @@ export default {
     };
   },
   methods: {
-    recommend: event => {
-      this.$http
-        .get("/api/webtoon", {
-          webtoon: this.webtoon
-        })
-        .then(alert("recommand complete!"));
+    recommend(event) {
+      var id = this.$route.params.id;
+      this.$http.post(`/api/webtoon/${id}`).then(alert("recommand complete!"));
     }
   }
 };
