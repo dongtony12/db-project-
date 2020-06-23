@@ -10,6 +10,9 @@
         <dt>링크 :{{webtoon.webtoon_link}}</dt>
       </dl>
     </section>
+    <div>
+      <button v-on:click="recommend">추천</button>
+    </div>
     <router-link :to="{ name: 'webtoonindexpage', params: { id: webtoon.id }}" class="link">돌아가기</router-link>
   </div>
 </template>
@@ -26,6 +29,15 @@ export default {
     return {
       webtoon: {}
     };
+  },
+  methods: {
+    recommend: event => {
+      this.$http
+        .get("/api/webtoon", {
+          webtoon: this.webtoon
+        })
+        .then(alert("recommand complete!"));
+    }
   }
 };
 </script>

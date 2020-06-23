@@ -3,7 +3,7 @@ var path = require('path');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/mainpage', function (req, res, next) {
+router.get('/', function (req, res, next) {
   //res.render('index', { title: 'Express' }); 기존코드
   res.sendFile(path.join(__dirname, '../public', 'index.html'))
 });

@@ -9,7 +9,7 @@ import loginpage from '@/components/login'
 import signuppage from '@/components/signup'
 import webtoonindex from '@/components/webtoonindexpage'
 import webtoonshow from '@/components/webtoonshowpage'
-import mainpage from '@/components/mainpage'
+
 import userlist from '@/components/userlist'
 
 
@@ -19,11 +19,7 @@ export default new Router({
   mode: 'history',
   routes: [
 
-    {
-      path: '/',
-      name: 'mainpage',
-      component: mainpage
-    },
+
     {
       path: '/login',
       name: 'login',

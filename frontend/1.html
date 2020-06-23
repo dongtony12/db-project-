@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>웹툰 DB</title>
+
+  <link rel="stylesheet" href="./build/css/app.css">
+  <link rel="stylesheet" href="./build/css/app.10712173ed.css">
+  <link rel="stylesheet" href="./build/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./build/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./build/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./build/css/font_nanum_square.css">
+  <link rel="stylesheet" href="./build/css/g_font_nanum_gothic.css">
+  <link rel="stylesheet" href="./build/css/vendors-c0b1b94b43.css">
+  <link rel="stylesheet" href="./build/css/app-10712173ed.css">
+
+<body class="fixed-layout pace-done body-small" style="background-color: aliceblue;">
+  <div class="pace pace-inactive">
+    <div class="pace-progress" data-progress-text="100%" data-progress="99"
+      style="transform: translate3d(100%, 0px, 0px);">
+      <div class="pace-progress-inner"></div>
+    </div>
+    <div class="pace-activity"></div>
+  </div>
+
+  <header id="app">
+    <div class="container">
+      <div class="col-xs-3 col-sm-3">
+        <h1>
+          <a href="/">
+            <div class="tablize">
+              <div class="table-row">
+                <div class="cell hidden-xs"><img src="./build/image/KakaoTalk_20200622_200452304.png" alt=""></div>
+                <div class="cell">디비툰</div>
+              </div>
+            </div>
+          </a>
+        </h1>
+      </div>
+      <div class="col-xs-9 col-sm-9" style="max-width: 550px;">
+        <form action="./index2.html">
+          <div class="input-group" style="width: 100%;">
+            <input type="text" class="form-control" name="keyword" value="" placeholder="검색어를 입력해주세요. 예) 송곳">
+            <span class="input-group-btn">
+              <button class="btn btn-primary">검색</button>
+            </span>
+          </div>
+
+        </form>
+      </div>
+      <form action="./login.html">
+        <span class="input-group-btn" style="padding-left: 30px;">
+          <button class="btn btn-primary">로그인</button>
+        </span>
+      </form>
+    </div>
+  </header>
+
+  <div id="content-wrapper">
+    <div id="content">
+      <div class="page-layout">
+
+
+        <div id="db-ranking-wrap">
+          <div class="container">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+
+              <h2>디비툰 인기순위</h2>
+
+              <div class="tablize">
+
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">1위
+                    <div class="info-box">
+                      <div class="thumbnail bg-img-cover" style="width: 100px;
+                      background-image: url(https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_5e13c29c-f451-4430-a84a-a46495fb8cc3.jpg);
+                      height: 100px;
+                      background-repeat: no-repeat; display: inline-block;" title="신의 탑">
+                        <img
+                          src="https://shared-comic.pstatic.net/thumb/webtoon/183559/thumbnail/thumbnail_IMAG10_5e13c29c-f451-4430-a84a-a46495fb8cc3.jpg"
+                          alt="신의 탑" title="신의 탑" hidden="">
+                      </div>
+                      <div class="default-data"
+                        style="display: inline-block; vertical-align: top; width: 200px; text-align: left;">
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">작품명</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">신의 탑</div>
+                        </div>
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">작가</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">SIU</div>
+                        </div>
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">플랫폼</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">Naver</div>
+                        </div>
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">평점</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">9.0</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">2위
+                    <div class="info-box">
+                      <div class="thumbnail bg-img-cover" style="width: 100px;
+                      background-image: url('https://shared-comic.pstatic.net/thumb/webtoon/703852/thumbnail/thumbnail_IMAG10_7a7e52e5-f211-485d-a5ba-4f6f3f8acdc6.jpg');
+                      height: 100px;
+                      background-repeat: no-repeat; display: inline-block;" title="바른연애생활">
+                        <img
+                          src="https://shared-comic.pstatic.net/thumb/webtoon/703852/thumbnail/thumbnail_IMAG10_7a7e52e5-f211-485d-a5ba-4f6f3f8acdc6.jpg"
+                          alt="바른연애생활" title="바른연애생활" hidden="">
+                      </div>
+                      <div class="default-data"
+                        style="display: inline-block; vertical-align: top; width: 200px; text-align: left;">
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">작품명</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">바른연애생활</div>
+                        </div>
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">작가</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">남수</div>
+                        </div>
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">플랫폼</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">Naver</div>
+                        </div>
+                        <div class="data-line" lang="ko">
+                          <div class="tag ko" style="display: inline-block; width: 100px;">평점</div>
+                          <div lang="ko" class="content ko ellipsis-line-1" style="display: inline-block;">8.0</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">3위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">4위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">5위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">6위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">7위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">8위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">9위</div>
+                </div>
+                <div class="table-row">
+                  <div class="cell text-center db-ranking-grade">10위</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <div class="tablize">
+        <div class="table-row">
+          <div class="cell text-center">
+            2020 <i class="fa fa-copyright"></i> Webtoon DB
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>

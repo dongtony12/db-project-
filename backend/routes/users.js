@@ -3,16 +3,6 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
 
-const mysql = require('mysql');
-
-var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'rlaehdgus',
-  database: 'dbtoon'
-})
-
-connection.connect();
 
 
 
