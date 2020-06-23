@@ -9,6 +9,9 @@ import loginpage from '@/components/login'
 import signuppage from '@/components/signup'
 import webtoonindex from '@/components/webtoonindexpage'
 import webtoonshow from '@/components/webtoonshowpage'
+import mainpage from '@/components/mainpage'
+import userlist from '@/components/userlist'
+
 
 Vue.use(Router)
 
@@ -16,11 +19,11 @@ export default new Router({
   mode: 'history',
   routes: [
 
-    // {
-    //   path: '/mainpage',
-    //   name: 'mainpage',
-    //   component: mainpage
-    // },
+    {
+      path: '/',
+      name: 'mainpage',
+      component: mainpage
+    },
     {
       path: '/login',
       name: 'login',
@@ -35,6 +38,11 @@ export default new Router({
       path: '/webtoon',
       name: 'webtoonindexpage',
       component: webtoonindex
+    },
+    {
+      path: '/userlist',
+      name: 'userlist',
+      component: userlist
     },
     {
       path: '/webtoon/:id',

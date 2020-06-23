@@ -87,4 +87,13 @@ router.post('/login', (req, res) => {
   })
 });
 
+router.get('/userlist', (req, res) => {
+  connection.query('SELECT * FROM user', (err, rows) => {
+    console.log(rows);
+
+    if (err) throw err;
+    res.send(rows);
+  });
+});
+
 module.exports = router;
