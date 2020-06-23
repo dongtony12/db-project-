@@ -24,25 +24,38 @@ export default {
     };
   },
   methods: {
-    login: function(event) {
-      this.$http
-        .post("/api/users/login", {
-          user: this.user
-        })
-        .then(
-          res => {
-            //로그인 성공
-            alert(res.data.message);
-          },
-          err => {
-            // error 를 보여줌
-            alert("Login failed! please check your id or password");
-          }
-        )
-        .catch(err => {
-          alert(err);
-        });
+    async login(event) {
+      const res = await this.$http.post("/api/users/login", {
+        user: this.user
+      });
+
+      if (res.data.success == true) {
+        alert(res.data.message);
+        this.$router.push({ name: "webtoonindexpage" });
+      } else {
+        alert(res.data.message);
+      }
     }
+    // login: function(event) {
+    //   this.$http
+    //     .post("/api/users/login", {
+    //       user: this.user
+    //     })
+    //     .then(
+    //       res => {
+    //         //로그인 성공
+    //         alert(res.data.message);
+    //         this.$router.push({ name: "webtoonindexpage" });
+    //       },
+    //       err => {
+    //         // error 를 보여줌
+    //         alert("Login failed! please check your id or password");
+    //       }
+    //     )
+    //     .catch(err => {
+    //       alert(err);
+    //     });
+    // }
   }
 };
 </script>
